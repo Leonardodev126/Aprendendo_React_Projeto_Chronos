@@ -1,13 +1,13 @@
-import "./styles/global.css"
 import "./styles/theme.css"
+import "./styles/global.css"
+import { Heading } from "./components/Heading";
 
 
 export function App() {
-  console.log('Olá');
-
   return (
     <>
-      <h1>Olá pessoal</h1>
+    <Heading />
+    <h1>Olá pessoal</h1>
     </>
   );
 }
