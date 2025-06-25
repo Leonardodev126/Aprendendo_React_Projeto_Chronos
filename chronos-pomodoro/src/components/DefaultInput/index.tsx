@@ -13,4 +13,3 @@ export function DefaultInput({ id, type, labelText, ...rest }: DefaultInputProps
         </>
     )
 }
-

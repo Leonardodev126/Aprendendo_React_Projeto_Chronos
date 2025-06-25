@@ -6,10 +6,10 @@ type AvaliableThemes = "dark" | "light"
 
 export function Menu() {
   const [theme, setTheme] = useState<AvaliableThemes>(() => {
-    const storageTheme = localStorage.getItem("theme") as AvaliableThemes || "dark"
+    const storageTheme = (localStorage.getItem("theme") as AvaliableThemes) || "dark";
 
-    return storageTheme
-  });
+    return storageTheme;
+  })
 
   const nextThemeIcon = {
     dark: <SunIcon />,
@@ -24,12 +24,11 @@ export function Menu() {
       return nextTheme
     })
   }
-
-  useEffect(() => {
-     console.log("Theme mudou", theme, Date.now())
+ 
+  useEffect(() => { 
      document.documentElement.setAttribute("data-theme", theme)
      localStorage.setItem("theme", theme)
-  }, [theme])
+  }, [theme]);
 
   return (
     <nav className={styles.menu}>
