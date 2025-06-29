@@ -34,9 +34,7 @@ const initialState: TaskStateModel = {
 export function App() {
   const [state, setState] = useState(initialState);
 
-  console.log("APP", state)
-
   return (
-    <Home estado={state} mudarEstado={setState} />
+    <Home />
   )
 }
