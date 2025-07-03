@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from "react";
+import React, { createContext, useContext, useState } from "react";
 import type { TaskStateModel } from "../../models/TaskStateModel";
 
 const initialState: TaskStateModel = {
@@ -30,16 +30,19 @@ type TaskContextProviderProps = {
   children: React.ReactNode;
 }
 
-// Componente formatado simulando o que seria o Provider, dentro do próprio contexto.
-export function TaskContextProvider({ children }: TaskContextProviderProps) {
+// Componente Provider
+export function Provider({ children }: TaskContextProviderProps) {
+
+  const [ state, setState ] = useState(initialState);
+
   return (
-    <TaskContext.Provider value={initialContextValue}>
+    <TaskContext.Provider value={{ state, setState }}>
       {children}
     </TaskContext.Provider>
   )
 }
 
-// Função que poderá ser usada como Hookie para não usar o useContext diretamente
+// Função para usar o useContext
 export function useTaskContext() {
   return useContext(TaskContext);
 }
