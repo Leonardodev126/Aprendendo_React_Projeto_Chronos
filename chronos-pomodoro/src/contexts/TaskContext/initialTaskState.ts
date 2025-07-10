@@ -12,4 +12,3 @@ export const initialTaskState: TaskStateModel = {
     longBreakTime: 15,
   }
 }
-

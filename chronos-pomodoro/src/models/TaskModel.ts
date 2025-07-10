@@ -9,3 +9,4 @@ export type TaskModel = {
   interruptDate: number | null; // Quando a task for interrompida
   type: keyof TaskStateModel["config"]
 }
+
