@@ -10,3 +10,4 @@ export function getNextCycle(currentCycle: number) {
 ...
 8 -> 1 volta pra 1
 */
+
