@@ -1,5 +1,4 @@
 // FizzBuzz
-
 import type { TaskModel } from "../models/TaskModel";
 
 export function getNextCycleType(currentCycle: number): TaskModel["type"] {
