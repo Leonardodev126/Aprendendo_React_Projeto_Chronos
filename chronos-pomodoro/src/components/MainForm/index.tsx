@@ -67,6 +67,7 @@ export function MainForm() {
           // value={taskName}
           // onChange={(event) => setTaskName(event.target.value)}
           ref={taskNameInput}
+          disabled={!!state.activeTask}
         />
       </div>
 
