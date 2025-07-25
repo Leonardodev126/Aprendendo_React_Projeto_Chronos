@@ -1,4 +1,4 @@
-import { PlayCircleIcon } from "lucide-react";
+import { PlayCircleIcon, StopCircleIcon } from "lucide-react";
 import { Cycles } from "../Cycles";
 import { DefaultButton } from "../DefaultButton";
 import { DefaultInput } from "../DefaultInput";
@@ -8,6 +8,7 @@ import { useTaskContext } from "../../contexts/TaskContext/useTaskContext";
 import { getNextCycle } from "../../utils/getNextCycle";
 import { getNextCycleType } from "../../utils/getNextCycleType";
 import { formatSecondsToMinutes } from "../../utils/formatSecondsToMinutes";
+import { type } from './../../models/TaskStateModel';
 
 
 export function MainForm() {
@@ -82,7 +83,11 @@ export function MainForm() {
       )}
 
       <div className='formRow'>
-        <DefaultButton icon={<PlayCircleIcon />} color='green' />
+        {!state.activeTask ? (
+          <DefaultButton aria-label="Iniciar nova tarefa" title="Iniciar nova tarefa" type="submit" icon={<PlayCircleIcon />} color='green' />
+        ) : (
+          <DefaultButton aria-label="Interromper tarefa atual" title="Interromper tarefa atual" type="button" color="red" icon={<StopCircleIcon />} />
+        )}
       </div>
     </form>
   );
